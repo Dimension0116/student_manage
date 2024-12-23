@@ -2,6 +2,7 @@
 import ColumnarLayout from '../components/ColumnarLayout.vue'
 import Navigation from '../components/Navigation.vue'
 import LayoutLine from '../components/LayoutLine.vue'
+import DropDownPanel from '../components/DropDownPanel.vue'
 import IconHeadSearch from '../components/icons/IconHeadSearch.vue'
 import IconHeadSetting from '../components/icons/IconHeadSetting.vue'
 import IconHeadLightDark from '../components/icons/IconHeadLightDark.vue'
@@ -37,13 +38,15 @@ import IconHeadHalfCircle from '../components/icons/IconHeadHalfCircle.vue'
                             <IconHeadSetting />
                         </div>
                         <img src="../assets/images/Group1@3x.png" style="width:32px;height: 32px;cursor:pointer;"/>
-
-                        
                     </LayoutLine>
                 </template>
+                
             </Navigation>
         </template>
-        
+        <template #contentLeft>
+            <DropDownPanel />
+            <DropDownPanel />
+        </template>
     </ColumnarLayout>
 </template>
 <style>

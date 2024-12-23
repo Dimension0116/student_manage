@@ -40,6 +40,7 @@
 }
 .columnarContentLeft{
     display: flex;
+    flex-direction: column;
     height: 100%;
     background-color: blanchedalmond;
     width:200px;
