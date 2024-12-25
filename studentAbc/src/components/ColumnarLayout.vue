@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: row;
     height: 60px;
-    background-color: darkred;
+    /* background-color: darkred; */
 }
 .columnarContent{
     display: flex;
@@ -42,13 +42,13 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
     width:200px;
 }
 .columnarContentRight{
     display: flex;
     flex:1 0 0;
     height: 100%;
-    background-color: coral;
+    background-color: rgb(216, 243, 216);
 }
 </style>

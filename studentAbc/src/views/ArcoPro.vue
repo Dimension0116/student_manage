@@ -3,6 +3,7 @@ import ColumnarLayout from '../components/ColumnarLayout.vue'
 import Navigation from '../components/Navigation.vue'
 import LayoutLine from '../components/LayoutLine.vue'
 import DropDownPanel from '../components/DropDownPanel.vue'
+import SiderbarLayout from '../components/SiderbarLayout.vue'
 import IconHeadSearch from '../components/icons/IconHeadSearch.vue'
 import IconHeadSetting from '../components/icons/IconHeadSetting.vue'
 import IconHeadLightDark from '../components/icons/IconHeadLightDark.vue'
@@ -44,8 +45,8 @@ import IconHeadHalfCircle from '../components/icons/IconHeadHalfCircle.vue'
             </Navigation>
         </template>
         <template #contentLeft>
-            <DropDownPanel />
-            <DropDownPanel />
+            <!-- <DropDownPanel /> -->
+            <SiderbarLayout />
         </template>
     </ColumnarLayout>
 </template>

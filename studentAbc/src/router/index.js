@@ -18,8 +18,8 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue'),
     },
     {
-      path: '/acepro',
-      name: 'acepro',
+      path: '/acropro',
+      name: 'acropro',
       component: () => import('../views/ArcoPro.vue'),
     },
   ],
