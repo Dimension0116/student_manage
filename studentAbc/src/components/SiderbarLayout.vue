@@ -10,9 +10,9 @@
             <span class="iconfont" :class="[iconClass[index],isParentSelected[index]]" style="font-size: 12px;"></span>
         </div>
         <div v-show="isDropdownOpen[index]" class="sidebar-dropdown">
-            <div class="dropdown-item" v-for="(dropdownItem, dropdownindex) in item.dropdown" :key="dropdownindex" @click="selectedItem(index,dropdownindex)" :class="isSelectedBackground[dropdownindex]">
+            <div class="dropdown-item" v-for="(dropdownItem, dropdownindex) in item.dropdown" :key="dropdownindex" @click="selectedItem(index,dropdownindex)" :class="isSelectedBackground[index][dropdownindex]">
                 <span style="width: 34px;"></span>
-                <span style="font-size: 14px;" :class="isContentSelected[dropdownindex]">{{ dropdownItem }}</span>
+                <span style="font-size: 14px;" :class="isContentSelected[index][dropdownindex]">{{ dropdownItem }}</span>
                 
             </div>
         </div>
@@ -55,7 +55,13 @@
     const isContentSelected=ref([]);
     const isSelectedBackground=ref([]);
     // const count=0;
-    
+    function initSelected(item,index){
+        isParentSelected.value[index]='';
+        item.dropdown.forEach((dropdownItem,dropdownindex)=>{
+                isContentSelected.value[index][dropdownindex]='';
+                isSelectedBackground.value[index][dropdownindex]='';
+        })
+    }
     function initVar(){
         //初始化变量
         // isDropdownOpen.value = Array(siderbarItems.value.length).fill(false);
@@ -68,34 +74,37 @@
             isDropdownOpen.value.push(false);
             iconClass.value.push('icon-arrow-down-bold');
             isParentSelected.value.push('');
+            isContentSelected.value.push([]); // 初始化为空数组
+            isSelectedBackground.value.push([]); // 初始化为空数组
             item.dropdown.forEach((dropdownItem,dropdownindex)=>{
                 isContentSelected.value[index].push('');
                 isSelectedBackground.value[index].push('');
             })
         })
-        }
-    onMounted(()=>{
-        initVar();
+        console.log(isContentSelected.value);
+    }
+    
+    initVar();
         // console.log(isDropdownOpen.value[0]);
-    })
     function toggleDropdown(index) {
-        this.isDropdownOpen[index] = !this.isDropdownOpen[index];
+        isDropdownOpen.value[index] = !isDropdownOpen.value[index];
         
-        if(this.isDropdownOpen[index]){
-            this.iconClass[index]='icon-arrow-up-bold';
+        if(isDropdownOpen.value[index]){
+            iconClass.value[index]='icon-arrow-up-bold';
             
         }else{
-            this.iconClass[index]='icon-arrow-down-bold';
+            iconClass.value[index]='icon-arrow-down-bold';
 
         }
     }
     function selectedItem(parentIndex,contentIndex){
-        isParentSelected.value = Array(siderbarItems.value.length).fill('');
-        isContentSelected.value = Array(siderbarItems.value.length).fill('');
-        isSelectedBackground.value = Array(siderbarItems.value.length).fill('');
-        this.isParentSelected[parentIndex]='selected-color';
-        this.isContentSelected[contentIndex]='selected-color';
-        this.isSelectedBackground[contentIndex]='selected-background-color';
+        siderbarItems.value.forEach((item,index)=>{
+            initSelected(item,index);
+        })
+        isParentSelected.value[parentIndex]='selected-color';
+        console.log(isContentSelected.value);
+        isContentSelected.value[parentIndex][contentIndex]='selected-color';
+        isSelectedBackground.value[parentIndex][contentIndex]='selected-background-color';
 
 
     }
