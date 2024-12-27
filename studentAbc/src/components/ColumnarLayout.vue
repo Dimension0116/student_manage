@@ -49,6 +49,6 @@
     display: flex;
     flex:1 0 0;
     height: 100%;
-    background-color: rgb(216, 243, 216);
+    /* background-color: rgb(216, 243, 216); */
 }
 </style>

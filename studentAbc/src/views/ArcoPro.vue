@@ -9,12 +9,25 @@ import IconHeadSetting from '../components/icons/IconHeadSetting.vue'
 import IconHeadLightDark from '../components/icons/IconHeadLightDark.vue'
 import IconHeadLanguage from '../components/icons/IconHeadLanguage.vue'
 import IconHeadHalfCircle from '../components/icons/IconHeadHalfCircle.vue'
+import Crumbs from '../components/Crumbs.vue'
+
+import { ref } from 'vue'
+    const breadRoutes=ref([
+        {
+            name:'工作台',
+            path:'/acropro/workplace'
+        },
+        {
+            name:'实时监控',
+            path:'/acropro/monitor'
+        }
+    ]);
 </script>
 
 <template>
-    <ColumnarLayout>
+    <ColumnarLayout style="background-color: #F7F8FA;">
         <template #head>
-            <Navigation>
+            <Navigation style="z-index: 999;">
                 <template #headLeft>
                     <LayoutLine>
                         <img src="../assets/images/Arco@3x.png" style="width:32px;height: 32px;cursor:pointer;"/>
@@ -48,8 +61,15 @@ import IconHeadHalfCircle from '../components/icons/IconHeadHalfCircle.vue'
             <!-- <DropDownPanel /> -->
             <SiderbarLayout />
         </template>
+        <template #contentRight>
+            <div style="padding: 20px;">
+                <Crumbs :routes="breadRoutes"/>
+                <RouterView />
+            </div>
+        </template>
     </ColumnarLayout>
 </template>
+
 <style>
     .headSvg{
         display: flex;

@@ -63,12 +63,6 @@
         })
     }
     function initVar(){
-        //初始化变量
-        // isDropdownOpen.value = Array(siderbarItems.value.length).fill(false);
-        // iconClass.value = Array(siderbarItems.value.length).fill('icon-arrow-down-bold');
-        // isParentSelected.value = Array(siderbarItems.value.length).fill('');
-        // isContentSelected.value = Array(siderbarItems.value.length).fill('');
-        // isSelectedBackground.value = Array(siderbarItems.value.length).fill('');
 
         siderbarItems.value.forEach((item,index)=>{
             isDropdownOpen.value.push(false);
@@ -153,6 +147,7 @@
 
 .dropdown-item {
     padding: 9px 12px;
+    border-radius: 4px;
     display: flex;
     cursor: pointer;
 }

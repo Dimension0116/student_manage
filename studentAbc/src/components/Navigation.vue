@@ -21,5 +21,6 @@
     height: 100%;
     padding: 0 16px;
     background-color: white;
+    box-shadow: 0px 4px 10px 0px rgba(78, 89, 105, 0.06);
 }
 </style>

@@ -21,6 +21,20 @@ const router = createRouter({
       path: '/acropro',
       name: 'acropro',
       component: () => import('../views/ArcoPro.vue'),
+      children: [
+        {
+          path: 'workplace',
+          name: 'workplace',
+          component: () => import('../views/WorkPlace.vue'),
+        },
+        {
+          path: 'monitor',
+          name: 'monitor',
+          component: () => import('../views/MonitorView.vue'),
+        },
+      ]
+
+
     },
   ],
 })
