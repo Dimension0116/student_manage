@@ -29,13 +29,13 @@ import { ref } from 'vue'
         <template #head>
             <Navigation style="z-index: 999;">
                 <template #headLeft>
-                    <LayoutLine>
+                    <LayoutLine style="align-items: center;">
                         <img src="../assets/images/Arco@3x.png" style="width:32px;height: 32px;cursor:pointer;"/>
                         <span style="cursor:pointer;font-family: PingFang SC;font-size: 20px;font-weight: 500;line-height: 28px;letter-spacing: 0px;color: #1D2129;">Acro Pro</span>
                     </LayoutLine>
                 </template>
                 <template #headRight>
-                    <LayoutLine>
+                    <LayoutLine style="align-items: center;">
                         <div class="headSvg">
                             <IconHeadSearch />
                         </div>
@@ -62,7 +62,7 @@ import { ref } from 'vue'
             <SiderbarLayout />
         </template>
         <template #contentRight>
-            <div style="padding: 20px;">
+            <div style="padding: 20px;width: 100%;">
                 <Crumbs :routes="breadRoutes"/>
                 <RouterView />
             </div>

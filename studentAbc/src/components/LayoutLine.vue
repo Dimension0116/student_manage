@@ -13,7 +13,7 @@
 .layoutLine{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
     justify-content: left;
     gap: 1rem;
 }
