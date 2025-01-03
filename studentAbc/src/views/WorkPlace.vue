@@ -2,6 +2,15 @@
 import CardVue from '../components/Card.vue'
 import LayoutLine from '../components/LayoutLine.vue'
 import EchartsVue from '@/components/EchartsVue.vue';
+import IconVue from '../components/IconVue.vue'
+import CarouselVue from '@/components/CarouselVue.vue';
+import { ref } from 'vue'
+const imgPathCarsel = ref([
+    '@/assets/images/img1.png',
+    '@/assets/images/img2.png',
+    '@/assets/images/img3.png',
+    '@/assets/images/img4.png',
+  ])
 </script>
 <template>
   <div class="root">
@@ -31,8 +40,36 @@ import EchartsVue from '@/components/EchartsVue.vue';
       </LayoutLine>  
       </LayoutLine>
       <LayoutLine class="root-right">
-
-
+        <LayoutLine class="layout-right-line001">
+          <LayoutLine class="layout-line-spacebetween">
+            <span style="font-size: 16px;font-weight: 500;color: #1D2129;">快捷入口</span>
+            <a href="#">管理</a>
+          </LayoutLine>
+          <LayoutLine class="layout-line-wrap">
+            <IconVue path="../src/assets/svgs/bookmark.svg" title="内容管理"/>
+            <IconVue path="../src/assets/svgs/bookmark.svg" title="内容管理"/>
+            <IconVue path="../src/assets/svgs/bookmark.svg" title="内容管理"/>
+            <IconVue path="../src/assets/svgs/bookmark.svg" title="内容管理"/>
+            <IconVue path="../src/assets/svgs/bookmark.svg" title="内容管理"/>
+          </LayoutLine>
+          <div style="height: 0;width: 100%;border: solid 1px #F2F3F5;"></div>
+          <LayoutLine class="layout-line-spacebetween">
+            <span style="font-size: 16px;font-weight: 500;color: #1D2129;">最近访问</span>
+            <a href="#">管理</a>
+          </LayoutLine>
+          <LayoutLine class="layout-line-wrap">
+            <IconVue path="../src/assets/svgs/bookmark.svg" title="内容管理"/>
+            <IconVue path="../src/assets/svgs/bookmark.svg" title="内容管理"/>
+            <IconVue path="../src/assets/svgs/bookmark.svg" title="内容管理"/>
+          </LayoutLine>
+        </LayoutLine>
+        <LayoutLine class="layout-right-line002">
+          <CarouselVue :data="imgPathCarsel"/>
+        </LayoutLine>
+        <LayoutLine class="layout-right-line003">
+        </LayoutLine>
+        <LayoutLine class="layout-right-line003">
+        </LayoutLine>
 
       </LayoutLine>
     </LayoutLine>
@@ -59,8 +96,9 @@ import EchartsVue from '@/components/EchartsVue.vue';
 }
 .root-right{
     display: flex;
+    flex-direction: column;
     flex:1 0 0;
-    background-color: rgb(230, 255, 216);
+    background-color: transparent;
 
 }
 .layout-line001{
@@ -87,7 +125,7 @@ import EchartsVue from '@/components/EchartsVue.vue';
 }
 .layout-line-spacebetween{
     display: flex;
-    flex: 1 0 0;
+    /* flex: 1 0 0; */
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -103,4 +141,37 @@ import EchartsVue from '@/components/EchartsVue.vue';
     font-size: 12px;
     text-decoration: none;
 }
+
+.layout-right-line001{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: normal;
+  flex: 2 0 0;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 20px;
+}
+.layout-right-line002{
+  display: flex;
+  flex: 1 0 0;
+  background: #ffffff;
+  border-radius: 4px;
+
+}
+.layout-right-line003{
+  display: flex;
+  flex: 1 0 0;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 20px;
+
+}
+.layout-line-wrap{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
 </style>
