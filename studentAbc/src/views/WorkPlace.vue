@@ -6,10 +6,10 @@ import IconVue from '../components/IconVue.vue'
 import CarouselVue from '@/components/CarouselVue.vue';
 import { ref } from 'vue'
 const imgPathCarsel = ref([
-    '@/assets/images/img1.png',
-    '@/assets/images/img2.png',
-    '@/assets/images/img3.png',
-    '@/assets/images/img4.png',
+    '../src/assets/images/img1.jpg',
+    '../src/assets/images/img2.jpg',
+    '../src/assets/images/img3.jpg',
+    '../src/assets/images/img4.jpg',
   ])
 </script>
 <template>
