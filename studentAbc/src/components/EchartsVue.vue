@@ -1,5 +1,5 @@
 <template>
-  <div id="mn" style="width: 100%;height:289px;"></div>
+  <div id="echartId" style="width: 100%;height:289px;"></div>
 </template>
 
 <script setup>
@@ -8,7 +8,7 @@ import * as echarts from 'echarts';
 const chatRef = ref(null);
 
 onMounted(()=>{
-    chatRef.value = document.getElementById('mn');
+    chatRef.value = document.getElementById('echartId');
     const myCharts=echarts.init(chatRef.value);
     const option = {
         xAxis: {

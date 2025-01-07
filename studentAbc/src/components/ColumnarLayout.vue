@@ -24,18 +24,20 @@
 .columnarParent{
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 .columnarHead{
     display: flex;
     flex-direction: row;
+    width: 100%;
     height: 60px;
     /* background-color: darkred; */
 }
 .columnarContent{
     display: flex;
     flex:1 0 0;
+    width: 100%;
     flex-direction: row;
 }
 .columnarContentLeft{

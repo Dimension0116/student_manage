@@ -10,6 +10,7 @@ import IconHeadLightDark from '../components/icons/IconHeadLightDark.vue'
 import IconHeadLanguage from '../components/icons/IconHeadLanguage.vue'
 import IconHeadHalfCircle from '../components/icons/IconHeadHalfCircle.vue'
 import Crumbs from '../components/Crumbs.vue'
+import CarouselVue from '@/components/CarouselVue.vue';
 
 import { ref } from 'vue'
     const breadRoutes=ref([
@@ -65,6 +66,8 @@ import { ref } from 'vue'
             <div style="padding: 20px;width: 100%;">
                 <Crumbs :routes="breadRoutes"/>
                 <RouterView />
+
+
             </div>
         </template>
     </ColumnarLayout>

@@ -64,9 +64,10 @@ const imgPathCarsel = ref([
           </LayoutLine>
         </LayoutLine>
         <LayoutLine class="layout-right-line002">
-          <CarouselVue :data="imgPathCarsel"/>
+          <CarouselVue :imgPaths="imgPathCarsel"/>
         </LayoutLine>
         <LayoutLine class="layout-right-line003">
+          
         </LayoutLine>
         <LayoutLine class="layout-right-line003">
         </LayoutLine>
